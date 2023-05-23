@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import headerLogo from "./assets/header-logo.png";
+
+import "./App.scss";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [images, setImages] = useState([]);
 
+  useEffect(() => {
+    fetch("http://localhost:3100/images?search=grey")
+      .then((response) => {
+        return response.json();
+      })
+      .then((images) => {
+        setImages(images);
+      });
+  }, []);
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header className="header">
+        <img src={headerLogo} className="header__logo" alt="Header logo" />
+        <form>
+          <label htmlFor="searchInput"></label>
+          <input
+            className="header__form--input"
+            type="text"
+            id="searchInput"
+            placeholder="🔍 You're looking for something?"
+            // style={{
+            //   backgroundImage: `url(assets/magnifying-glass.svg)`,
+            //   backgroundPosition: "left center",
+            //   backgroundRepeat: "no-repeat",
+            //   paddingLeft: "30px",
+            // }}
+          />
+        </form>
+      </header>
+      <main>
+        <div>
+          {images.map((image) => {
+            return (
+              <img
+                key={image.id}
+                src={image.main_attachment.big}
+                alt={image.title}
+              ></img>
+            );
+          })}
+        </div>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
