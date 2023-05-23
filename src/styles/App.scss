@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 100px;
+
+  &__logo {
+    height: 160px;
+  }
+  &__form {
+    &--input {
+      border-radius: 10px;
+      width: 210px;
+      height: 25px;
+      background-color: #f3eded;
+    }
+  }
+}
+
+.image {
+  height: 400px;
+}

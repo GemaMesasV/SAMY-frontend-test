@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import headerLogo from "./assets/header-logo.png";
+import headerLogo from "../assets/header-logo.png";
 
-import "./App.scss";
+import "../styles/App.scss";
+import "../styles/Reset.scss";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -25,13 +26,7 @@ function App() {
             className="header__form--input"
             type="text"
             id="searchInput"
-            placeholder="🔍 You're looking for something?"
-            // style={{
-            //   backgroundImage: `url(assets/magnifying-glass.svg)`,
-            //   backgroundPosition: "left center",
-            //   backgroundRepeat: "no-repeat",
-            //   paddingLeft: "30px",
-            // }}
+            placeholder="🔍  You're looking for something?"
           />
         </form>
       </header>
@@ -40,6 +35,7 @@ function App() {
           {images.map((image) => {
             return (
               <img
+                className="image"
                 key={image.id}
                 src={image.main_attachment.big}
                 alt={image.title}
