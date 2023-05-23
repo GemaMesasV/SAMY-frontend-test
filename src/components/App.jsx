@@ -30,16 +30,21 @@ function App() {
           />
         </form>
       </header>
-      <main>
-        <div>
+      <main className="main">
+        <div className="main__cards">
           {images.map((image) => {
             return (
-              <img
-                className="image"
-                key={image.id}
-                src={image.main_attachment.big}
-                alt={image.title}
-              ></img>
+              <div className="main__cards--item" key={image.id}>
+                <img
+                  className="main__cards--item--image"
+                  src={image.main_attachment.big}
+                  alt={image.title}
+                ></img>
+                <p className="main__cards--item--title">{image.title}</p>
+                <p className="main__cards--item--author">
+                  <span>by</span> {image.author}
+                </p>
+              </div>
             );
           })}
         </div>
