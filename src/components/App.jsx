@@ -16,6 +16,15 @@ function App() {
         setImages(images);
       });
   }, []);
+
+  const greyCards = [
+    "Who's gonna drive you",
+    "Teamaker",
+    "Wheatness",
+    "Desert",
+    "A forest with no wolves",
+  ];
+
   return (
     <>
       <header className="header">
@@ -34,7 +43,15 @@ function App() {
         <div className="main__cards">
           {images.map((image) => {
             return (
-              <div className="main__cards--item" key={image.id}>
+              <div
+                className={`main__cards--item card-container ${
+                  greyCards.includes(image.title) ? "special" : ""
+                }`}
+                key={image.id}
+              >
+                <span className="card-container--price">
+                  {image.price} <span>€</span>
+                </span>
                 <img
                   className="main__cards--item--image"
                   src={image.main_attachment.big}
