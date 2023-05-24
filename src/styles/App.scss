@@ -23,7 +23,6 @@
     }
   }
 }
-
 .main {
   padding: 50px 100px 50px;
   background-color: #f3eded;
@@ -63,7 +62,7 @@
 }
 .card-container {
   position: relative;
-  &--price {
+  &__price {
     position: absolute;
     top: 25px;
     left: 40px;
@@ -75,6 +74,47 @@
     > span {
       font-size: 15px;
       font-weight: 700;
+    }
+  }
+  &__like {
+    background-color: #0cbfe9;
+    border-radius: 50%;
+    padding: 8px;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    z-index: 2;
+    &--number {
+      color: white;
+      -webkit-text-stroke: 0.5px #0cbfe9; /* Borde: 1 píxel negro */
+      -webkit-text-fill-color: white;
+      font-size: 24px;
+      font-weight: 700;
+      position: absolute;
+      top: 75px;
+      right: 35px;
+      z-index: 2;
+    }
+  }
+
+  &__reload {
+    background-color: #0cbfe9;
+    border-radius: 50%;
+    padding: 8px;
+    position: absolute;
+    top: 115px;
+    right: 29px;
+    z-index: 2;
+    &--number {
+      color: black;
+      -webkit-text-stroke: 0.5px #0cbfe9; /* Borde: 1 píxel negro */
+      -webkit-text-fill-color: white;
+      font-size: 24px;
+      font-weight: 700;
+      position: absolute;
+      top: 165px;
+      right: 35px;
+      z-index: 2;
     }
   }
 }
