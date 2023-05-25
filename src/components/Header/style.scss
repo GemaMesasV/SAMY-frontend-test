@@ -1,0 +1,32 @@
+@import "../../styles/Variables.scss";
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 40px;
+  @media all and (min-width: 480px) {
+    flex-direction: row;
+  }
+
+  @media all and (min-width: 768px) {
+    flex-direction: row;
+    margin: 50px 100px;
+  }
+
+  &__logo {
+    height: 160px;
+    margin-bottom: 20px;
+    @media all and (min-width: 480px) {
+      margin-bottom: 0;
+    }
+  }
+  &__form {
+    &--input {
+      border-radius: 10px;
+      width: 210px;
+      height: 25px;
+      background-color: $light-grey;
+    }
+  }
+}
