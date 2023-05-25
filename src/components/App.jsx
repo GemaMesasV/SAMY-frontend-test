@@ -46,7 +46,10 @@ function App() {
   return (
     <>
       <header className="header">
-        <img src={headerLogo} className="header__logo" alt="Header logo" />
+        <a href="/">
+          <img src={headerLogo} className="header__logo" alt="Header logo" />
+        </a>
+
         <form onSubmit={handleSubmit}>
           <label htmlFor="searchInput"></label>
           <input
@@ -102,12 +105,14 @@ function App() {
                 </span>
 
                 <img
-                  className="main__cards--item--image"
+                  className="main__cards--item--image not-selectable"
                   src={image.main_attachment.big}
                   alt={image.title}
                 ></img>
-                <p className="main__cards--item--title">{image.title}</p>
-                <p className="main__cards--item--author">
+                <p className="main__cards--item--title not-selectable">
+                  {image.title}
+                </p>
+                <p className="main__cards--item--author not-selectable">
                   <span>by</span> {image.author}
                 </p>
               </div>
