@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { AllImagesUseCase } from "../usecases/all-images.usecase";
+import { SearchImagesUseCase } from "../usecases/search-images.usecase";
 
 import headerLogo from "../assets/header-logo.png";
 
@@ -14,6 +15,7 @@ import "../styles/Reset.scss";
 
 function App() {
   const [images, setImages] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     AllImagesUseCase.execute().then((data) => setImages(data));
@@ -27,17 +29,28 @@ function App() {
     "A forest with no wolves",
   ];
 
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    SearchImagesUseCase.execute(search).then((data) => setImages(data));
+  };
+
   return (
     <>
       <header className="header">
         <img src={headerLogo} className="header__logo" alt="Header logo" />
-        <form>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="searchInput"></label>
           <input
             className="header__form--input"
             type="text"
             id="searchInput"
             placeholder="🔍  You're looking for something?"
+            value={search}
+            onChange={handleSearch}
           />
         </form>
       </header>

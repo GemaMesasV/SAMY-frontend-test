@@ -4,8 +4,10 @@ export class SearchImagesUseCase {
   static async execute(search) {
     const repository = new ImagesRepository();
     const images = await repository.getSearchImages(search);
-    return images.filter((image) =>
-      image.title.toLowerCase().includes(search.toLowerCase())
+    return images.filter(
+      (image) =>
+        image.title.toLowerCase().includes(search.toLowerCase()) ||
+        image.author.toLowerCase().includes(search.toLowerCase())
     );
   }
 }
