@@ -80,38 +80,6 @@ function App() {
                 <span className="card-container__price">
                   {image.price} <span>€</span>
                 </span>
-                <div
-                  id="likeIcon"
-                  className={`card-container__like${
-                    image.liked ? "--selected" : ""
-                  }`}
-                  onClick={() => handleLike(image.id)}
-                >
-                  <FontAwesomeIcon
-                    icon={faThumbsUp}
-                    flip="horizontal"
-                    size="xl"
-                    style={{ color: "white" }}
-                  />
-                </div>
-                <span
-                  id="likeNumber"
-                  className="card-container__like--number not-selectable"
-                >
-                  {image.likes_count}
-                </span>
-                <div className="card-container__reload">
-                  <FontAwesomeIcon
-                    icon={faArrowRotateRight}
-                    flip="horizontal"
-                    size="xl"
-                    style={{ color: "white" }}
-                  />
-                </div>
-                <span className="card-container__reload--number not-selectable">
-                  {" "}
-                  0
-                </span>
 
                 <img
                   className="main__cards--item--image not-selectable"
@@ -124,6 +92,44 @@ function App() {
                 <p className="main__cards--item--author not-selectable">
                   <span>by</span> {image.author}
                 </p>
+                <div className="test">
+                  <div className="card-container__like">
+                    <div
+                      id="likeIcon"
+                      className={`card-container__like-btn${
+                        image.liked ? "--selected" : ""
+                      }`}
+                      onClick={() => handleLike(image.id)}
+                    >
+                      <FontAwesomeIcon
+                        icon={faThumbsUp}
+                        flip="horizontal"
+                        size="xl"
+                        style={{ color: "white" }}
+                      />
+                    </div>
+                    <span
+                      id="likeNumber"
+                      className="card-container__like-btn--number not-selectable"
+                    >
+                      {image.likes_count}
+                    </span>
+                  </div>
+                  <div className="card-container__reload">
+                    <div className="card-container__reload-btn">
+                      <FontAwesomeIcon
+                        icon={faArrowRotateRight}
+                        flip="horizontal"
+                        size="xl"
+                        style={{ color: "white" }}
+                      />
+                    </div>
+                    <span className="card-container__reload-btn--number not-selectable">
+                      {" "}
+                      0
+                    </span>
+                  </div>
+                </div>
               </div>
             );
           })}
