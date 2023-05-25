@@ -72,12 +72,12 @@ function App() {
           {images.map((image) => {
             return (
               <div
-                className={`main__cards--item card-container ${
+                className={`main__cards--item ${
                   greyCards.includes(image.title) ? "special" : ""
                 }`}
                 key={image.id}
               >
-                <span className="card-container__price">
+                <span className="main__cards--item--price">
                   {image.price} <span>€</span>
                 </span>
 
@@ -93,10 +93,10 @@ function App() {
                   <span>by</span> {image.author}
                 </p>
                 <div className="test">
-                  <div className="card-container__like">
+                  <div className="main__cards--item--like">
                     <div
                       id="likeIcon"
-                      className={`card-container__like-btn${
+                      className={`main__cards--item--like-btn${
                         image.liked ? "--selected" : ""
                       }`}
                       onClick={() => handleLike(image.id)}
@@ -110,13 +110,13 @@ function App() {
                     </div>
                     <span
                       id="likeNumber"
-                      className="card-container__like-btn--number not-selectable"
+                      className="main__cards--item--like-btn--number not-selectable"
                     >
                       {image.likes_count}
                     </span>
                   </div>
-                  <div className="card-container__reload">
-                    <div className="card-container__reload-btn">
+                  <div className="main__cards--item--reload">
+                    <div className="main__cards--item--reload-btn">
                       <FontAwesomeIcon
                         icon={faArrowRotateRight}
                         flip="horizontal"
@@ -124,7 +124,7 @@ function App() {
                         style={{ color: "white" }}
                       />
                     </div>
-                    <span className="card-container__reload-btn--number not-selectable">
+                    <span className="main__cards--item--reload-btn--number not-selectable">
                       {" "}
                       0
                     </span>
