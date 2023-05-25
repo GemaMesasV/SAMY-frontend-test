@@ -63,7 +63,7 @@ function App() {
         </form>
       </header>
       <main className="main">
-        <div className="main__cards">
+        <div id="card" className="main__cards">
           {images.map((image) => {
             return (
               <div
