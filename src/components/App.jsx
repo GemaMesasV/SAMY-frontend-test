@@ -7,6 +7,7 @@ import {
 
 import { AllImagesUseCase } from "../usecases/all-images.usecase";
 import { SearchImagesUseCase } from "../usecases/search-images.usecase";
+import { LikeImageUseCase } from "../usecases/like-image.usecase";
 
 import headerLogo from "../assets/header-logo.png";
 
@@ -38,6 +39,10 @@ function App() {
     SearchImagesUseCase.execute(search).then((data) => setImages(data));
   };
 
+  const handleLike = (id) => {
+    LikeImageUseCase.execute(id, images).then((data) => setImages(data));
+  };
+
   return (
     <>
       <header className="header">
@@ -67,7 +72,12 @@ function App() {
                 <span className="card-container__price">
                   {image.price} <span>€</span>
                 </span>
-                <div className="card-container__like">
+                <div
+                  className={`card-container__like${
+                    image.liked ? "--selected" : ""
+                  }`}
+                  onClick={() => handleLike(image.id)}
+                >
                   <FontAwesomeIcon
                     icon={faThumbsUp}
                     flip="horizontal"
@@ -75,7 +85,7 @@ function App() {
                     style={{ color: "white" }}
                   />
                 </div>
-                <span className="card-container__like--number">
+                <span className="card-container__like--number not-selectable">
                   {image.likes_count}
                 </span>
                 <div className="card-container__reload">
@@ -86,7 +96,10 @@ function App() {
                     style={{ color: "white" }}
                   />
                 </div>
-                <span className="card-container__reload--number"> 0</span>
+                <span className="card-container__reload--number not-selectable">
+                  {" "}
+                  0
+                </span>
 
                 <img
                   className="main__cards--item--image"
