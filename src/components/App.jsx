@@ -47,7 +47,12 @@ function App() {
     <>
       <header className="header">
         <a href="/">
-          <img src={headerLogo} className="header__logo" alt="Header logo" />
+          <img
+            id="headerLogo"
+            src={headerLogo}
+            className="header__logo"
+            alt="Header logo"
+          />
         </a>
 
         <form onSubmit={handleSubmit}>
@@ -76,6 +81,7 @@ function App() {
                   {image.price} <span>€</span>
                 </span>
                 <div
+                  id="likeIcon"
                   className={`card-container__like${
                     image.liked ? "--selected" : ""
                   }`}
@@ -88,7 +94,10 @@ function App() {
                     style={{ color: "white" }}
                   />
                 </div>
-                <span className="card-container__like--number not-selectable">
+                <span
+                  id="likeNumber"
+                  className="card-container__like--number not-selectable"
+                >
                   {image.likes_count}
                 </span>
                 <div className="card-container__reload">
