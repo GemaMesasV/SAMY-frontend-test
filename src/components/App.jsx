@@ -5,6 +5,8 @@ import {
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { AllImagesUseCase } from "../usecases/all-images.usecase";
+
 import headerLogo from "../assets/header-logo.png";
 
 import "../styles/App.scss";
@@ -14,13 +16,7 @@ function App() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3100/images?search=grey")
-      .then((response) => {
-        return response.json();
-      })
-      .then((images) => {
-        setImages(images);
-      });
+    AllImagesUseCase.execute().then((data) => setImages(data));
   }, []);
 
   const greyCards = [
