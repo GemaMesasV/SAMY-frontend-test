@@ -12,4 +12,10 @@ export class ImagesRepository {
       await axios.get(`http://localhost:3100/images?search=${search}`)
     ).data;
   }
+
+  async likeImage(id) {
+    return await (
+      await axios.post(`http://localhost:3100/images/${id}/likes`)
+    ).status;
+  }
 }
