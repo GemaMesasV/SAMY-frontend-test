@@ -1,5 +1,6 @@
 {
   "name": "front-test-master",
+  "homepage": "./",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +11,6 @@
     "mocks": "mocks-server",
     "dev": "vite",
     "build": "vite build",
-    "docs": "rm -rf dist && npm run build && mv dist docs",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "cy:open": "cypress open",
