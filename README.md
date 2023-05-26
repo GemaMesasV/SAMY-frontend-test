@@ -21,14 +21,32 @@ Aunque para este último también podemos ejecutar el entorno visual de Cypress 
 
 `npm run cy:open`
 
-Respecto a la realización del proyecto, debo decir que ha sido una experiencia muy gratificante. Me ha resultado muy entretenido de realizar y me he enfrentado a algunos retos, como por ejemplo:
+## Desarrollo
+
+Respecto al desarrollo del proyecto, debo decir que ha sido una experiencia muy gratificante. Me ha resultado muy entretenido de realizar y me he enfrentado a algunos retos, como por ejemplo:
 
 - maquetación de los elementos flotantes de las cards
 - solución de errores técnicos relacionados con la api mock y el proyecto
 - implementación de Grid y su diseño responsive
 
-Por lo que me siento orgullosa del resultado final y de mi aprendizaje durante el proyecto.
-Cualquier feedback constructivo será bien recibido :smiley:.
+Para el proyecto me he servido de la herramienta Vite como task y package manager, en conjunto con React.
+
+He utilizado Sass y he seguido la metodología BEM para anidar las clases de CSS:
+Ejemplo:
+`<div class="block">
+
+<div class="block__element">Elem 1</div>
+<div class="block__element">Elem 2</div>
+<div class="block__element block__element--modifier">Elem 3</div>
+</div>`
+
+He de decir que si bien me he ajustado a los PSDs por lo general, el proyecto cuenta con ligeras variaciones de color o en los márgenes. Esto ha sido una decisión personal para mejorar la accesibilidad del proyecto, ya que al ser un catálogo de imágenes tan dispares, si elegía colores claros no se apreciarían bien en aquellas imágenes con fondo claro y viceversa, por lo que he optado por una combinación de colores fuertes que se puedan apreciar con cualquier imagen de fondo.
+
+En cuanto al control de versiones, el proyecto cuenta con Git y está subido a mi repositorio de GitHub [aquí](https://github.com/GemaMesasV/SAMY-frontend-test)
+Se ha utilizado el sistema de Conventional Commits para su realización.
+
+Por todo esto, me siento orgullosa de mi aprendizaje durante el proyecto y del resultado final.
+Cualquier feedback constructivo será siempre bien recibido :smiley:.
 
 # Requerimientos
 
