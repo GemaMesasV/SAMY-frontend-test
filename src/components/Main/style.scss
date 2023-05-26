@@ -13,5 +13,14 @@
         minmax(min(100%/3, max(450px, 100%/5)), 1fr)
       );
     }
+    &--one {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 1fr;
+
+      @media all and (min-width: 480px) {
+        grid-template-columns: 450px;
+      }
+    }
   }
 }

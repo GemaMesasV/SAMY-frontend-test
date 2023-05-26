@@ -6,7 +6,10 @@ import "./style.scss";
 function Main({ images, handleLike }) {
   return (
     <main className="main">
-      <div id="card" className="main__cards">
+      <div
+        id="card"
+        className={`main__cards${images.length === 1 ? "--one" : ""}`}
+      >
         {images.map((image) => {
           return <Card key={image.id} image={image} handleLike={handleLike} />;
         })}
