@@ -31,14 +31,8 @@ Respecto al desarrollo del proyecto, debo decir que ha sido una experiencia muy 
 
 Para el proyecto me he servido de la herramienta Vite como task y package manager, en conjunto con React.
 
-He utilizado Sass y he seguido la metodología BEM para anidar las clases de CSS:
-Ejemplo:
 
-<div class="block">
-<div class="block__element">Elem 1</div>
-<div class="block__element">Elem 2</div>
-<div class="block__element block__element--modifier">Elem 3</div>
-</div>
+He utilizado Sass y he seguido la metodología BEM para anidar las clases de CSS.
 
 He de decir que si bien me he ajustado a los PSDs por lo general, el proyecto cuenta con ligeras variaciones de color o en los márgenes. Esto ha sido una decisión personal para mejorar la accesibilidad del proyecto, ya que al ser un catálogo de imágenes tan dispares, si elegía colores claros no se apreciarían bien en aquellas imágenes con fondo claro y viceversa, por lo que he optado por una combinación de colores fuertes que se puedan apreciar con cualquier imagen de fondo.
 
