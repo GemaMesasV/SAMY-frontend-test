@@ -1,15 +1,17 @@
 import axios from "axios";
 
 export class ImagesRepository {
-  async getAllImages() {
+  async getImages(page) {
     return await (
-      await axios.get("http://localhost:3100/images")
+      await axios.get(`http://localhost:3100/images?page=${page}`)
     ).data;
   }
 
-  async getSearchImages(search) {
+  async getSearchImages(search, page) {
     return await (
-      await axios.get(`http://localhost:3100/images?search=${search}`)
+      await axios.get(
+        `http://localhost:3100/images?search=${search}&page=${page}`
+      )
     ).data;
   }
 
