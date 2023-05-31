@@ -5,9 +5,12 @@ describe("images spec", () => {
     cy.wait(1000);
   });
   it("user visits the webpage", () => {
+    cy.get(".infinite-scroll-component > :nth-child(1)").should("exist");
+    cy.get(".infinite-scroll-component > :nth-child(7)").should("not.exist");
     cy.scrollTo("bottom");
+    cy.wait(1000);
+    cy.get(".infinite-scroll-component > :nth-child(7)").should("exist");
     cy.scrollTo("top");
-    cy.get("#card > :nth-child(1)").should("exist");
   });
   it("user likes an image", () => {
     cy.get(":nth-child(1) > .card__footer > .card__like > #likeNumber").then(
